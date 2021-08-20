@@ -8,4 +8,5 @@
     <string name="label_ps">PS</string>
     <string name="label_name">Nome:</string>
     <string name="form_title">P O K É D A D O S</string>
+    <string name="pokemon_update_sucess">Pokémon atualizado com sucesso</string>
 </resources>
