@@ -9,6 +9,7 @@ import br.com.heiderlopes.pokemonwstemplatev2.presentation.model.ViewState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+
 class ListPokemonsViewModel(
     val getFirstGenerationPokemonsUseCase: GetFirstGenerationPokemonsUseCase
 ) : ViewModel() {

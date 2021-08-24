@@ -11,11 +11,9 @@ import br.com.heiderlopes.pokemonwstemplatev2.domain.usecases.GetPokemonUseCase
 import br.com.heiderlopes.pokemonwstemplatev2.domain.usecases.UpdatePokemonUseCase
 import br.com.heiderlopes.pokemonwstemplatev2.presentation.formpokemon.FormPokemonViewModel
 import br.com.heiderlopes.pokemonwstemplatev2.presentation.listpokemons.ListPokemonsViewModel
-import com.squareup.picasso.Picasso
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
-import retrofit2.Retrofit
 
 val domainModules = module {
     factory { GetFirstGenerationPokemonsUseCase(pokemonRepository = get()) }

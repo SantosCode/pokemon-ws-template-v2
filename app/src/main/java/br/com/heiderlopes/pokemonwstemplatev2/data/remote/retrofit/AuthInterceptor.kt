@@ -16,7 +16,6 @@ class AuthInterceptor : Interceptor {
         if (response.code() == 401) {
             Log.e("MEUAPP", "Error API KEY")
         }
-
         return response
     }
 }

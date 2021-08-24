@@ -1,11 +1,10 @@
 package br.com.heiderlopes.pokemonwstemplatev2.presentation.formpokemon
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.AbsSeekBar
 import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import br.com.heiderlopes.pokemonwstemplatev2.R
 import br.com.heiderlopes.pokemonwstemplatev2.databinding.ActivityFormPokemonBinding
 import br.com.heiderlopes.pokemonwstemplatev2.domain.model.Pokemon
@@ -17,7 +16,7 @@ import org.koin.android.viewmodel.ext.android.viewModel
 class FormPokemonActivity : AppCompatActivity(R.layout.activity_form_pokemon) {
 
     private val formPokemonViewModel: FormPokemonViewModel by viewModel()
-    val picasso: Picasso by inject()
+    private val picasso: Picasso by inject()
     private lateinit var pokemon: Pokemon
 
     private val viewBinding by lazy {
@@ -46,10 +45,10 @@ class FormPokemonActivity : AppCompatActivity(R.layout.activity_form_pokemon) {
         formPokemonViewModel.pokemonResult.observe(this, {
             when(it) {
                 is ViewState.Success -> setValues(it.data)
-                is ViewState.Loading -> {}
                 is ViewState.Failure -> Toast.makeText(
                     this, it.throwable.message, Toast.LENGTH_LONG
                 ).show()
+                else -> {}
             }
         })
         formPokemonViewModel.pokemonUpdateResult.observe(this, {
@@ -57,10 +56,10 @@ class FormPokemonActivity : AppCompatActivity(R.layout.activity_form_pokemon) {
                 is ViewState.Success -> Toast.makeText(
                         this, getString(R.string.pokemon_update_sucess), Toast.LENGTH_LONG
                     ).show()
-                is ViewState.Loading -> {}
                 is ViewState.Failure -> Toast.makeText(
                     this, it.throwable.message, Toast.LENGTH_LONG
                 ).show()
+                else -> {}
             }
         })
     }

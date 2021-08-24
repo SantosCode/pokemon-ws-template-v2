@@ -10,6 +10,7 @@ import okhttp3.OkHttpClient
 
 private const val CACHE_SIZE = 5 * 1024 * 1024L // 5 MB de cache
 
+// Fazer cache da imagem carregada remotamente
 class PicassoClient(
     private val application: Context
 ) {
@@ -21,7 +22,6 @@ class PicassoClient(
             .addInterceptor(AuthInterceptor())
             .build()
     }
-
 
     fun newInstance(): Picasso {
         return Picasso
